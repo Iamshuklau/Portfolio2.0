@@ -1,0 +1,186 @@
+<!--
+  - #SIDEBAR
+-->
+
+<aside class="sidebar" data-sidebar>
+
+  <div class="sidebar-info">
+
+    <figure class="avatar-box">
+      <img src="./assets/images/my-avatar.png" alt="Utkarsh Shukla" width="80">
+    </figure>
+
+    <div class="info-content">
+      <h1 class="name" title="Utkarsh Shukla">Utkarsh Shukla</h1>
+
+      <p class="title">
+        <span id="animated-title">Software Developer</span>
+        <span class="cursor">|</span>
+      </p>
+    </div>
+
+    <button class="info_more-btn" data-sidebar-btn>
+      <span>Show Contacts</span>
+
+      <ion-icon name="chevron-down"></ion-icon>
+    </button>
+
+  </div>
+
+  <div class="sidebar-info_more">
+
+    <div class="separator"></div>
+
+    <ul class="contacts-list">
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Email</p>
+
+          <a href="mailto:mrshuklau@gmail.com" class="contact-link">mrshuklau@gmail.com</a>
+        </div>
+
+      </li>
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="phone-portrait-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Phone</p>
+
+          <a href="tel:+916390011888" class="contact-link">+91 6390011888</a>
+        </div>
+
+      </li>
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Graduation</p>
+
+          <time datetime="2026-05">May 2026</time>
+        </div>
+
+      </li>
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Location</p>
+
+          <address>Jaipur, India</address>
+        </div>
+
+      </li>
+
+    </ul>
+
+    <div class="separator"></div>
+
+    <ul class="social-list">
+
+      <li class="social-item">
+        <a href="https://linkedin.com/in/iamshuklau" class="social-link" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </li>
+
+      <li class="social-item">
+        <a href="https://github.com/Iamshuklau" class="social-link" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </li>
+
+      <li class="social-item">
+        <a href="https://utkarsh.world" class="social-link" target="_blank">
+          <ion-icon name="globe-outline"></ion-icon>
+        </a>
+      </li>
+
+    </ul>
+
+    <div class="made-with-love">
+      <p>Made with ❤️ by Utkarsh Shukla</p>
+    </div>
+
+  </div>
+
+  <style>
+    .cursor {
+      display: inline-block;
+      animation: blink 1s infinite;
+      color: var(--orange-yellow-crayola);
+      font-weight: normal;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    #animated-title {
+      display: inline-block;
+      min-height: 1.2em;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    .made-with-love {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .made-with-love p {
+      font-size: 12px;
+      color: var(--light-gray-70);
+      font-weight: var(--fw-400);
+      line-height: 1.4;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+
+    .made-with-love:hover p {
+      color: var(--orange-yellow-crayola);
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .made-with-love p::before {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 580px) {
+      .made-with-love p {
+        font-size: 11px;
+      }
+    }
+
+
+  </style>
+
+</aside> 

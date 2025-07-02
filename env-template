@@ -1,0 +1,16 @@
+# Resend API Configuration
+# Get your API key from https://resend.com/api-keys
+RESEND_API_KEY=your_resend_api_key_here
+
+# Server Configuration (optional, defaults to 3001)
+PORT=3001
+
+# Environment (optional, for error handling)
+NODE_ENV=production
+
+# Instructions:
+# 1. Copy this file to .env (rename env-template to .env)
+# 2. Replace "your_resend_api_key_here" with your actual Resend API key
+# 3. Your API key should start with "re_"
+# 4. The .env file should NOT be committed to version control
+# 5. For production deployment, set these variables in your hosting platform 

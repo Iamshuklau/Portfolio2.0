@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utkarsh Shukla - Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!--
+    - Custom Style for clickable service items
+  -->
+  <style>
+    .service-item {
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Constellation Background -->
+  <div class="constellation-bg">
+    <div class="stars-layer stars-layer-1"></div>
+    <div class="stars-layer stars-layer-2"></div>
+    <div class="stars-layer stars-layer-3"></div>
+    <canvas id="constellation-canvas"></canvas>
+  </div>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+  - #SIDEBAR
+-->
+
+<aside class="sidebar" data-sidebar>
+
+  <div class="sidebar-info">
+
+    <figure class="avatar-box">
+      <img src="./assets/images/my-avatar.png" alt="Utkarsh Shukla" width="80">
+    </figure>
+
+    <div class="info-content">
+      <h1 class="name" title="Utkarsh Shukla">Utkarsh Shukla</h1>
+
+      <p class="title">
+        <span id="animated-title">Software Developer</span>
+        <span class="cursor">|</span>
+      </p>
+    </div>
+
+    <button class="info_more-btn" data-sidebar-btn>
+      <span>Show Contacts</span>
+
+      <ion-icon name="chevron-down"></ion-icon>
+    </button>
+
+  </div>
+
+  <div class="sidebar-info_more">
+
+    <div class="separator"></div>
+
+    <ul class="contacts-list">
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Email</p>
+
+          <a href="mailto:mrshuklau@gmail.com" class="contact-link">mrshuklau@gmail.com</a>
+        </div>
+
+      </li>
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="phone-portrait-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Phone</p>
+
+          <a href="tel:+916390011888" class="contact-link">+91 6390011888</a>
+        </div>
+
+      </li>
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Location</p>
+
+          <address>Jaipur, India</address>
+        </div>
+
+      </li>
+
+    </ul>
+
+    <div class="separator"></div>
+
+    <ul class="social-list">
+
+      <li class="social-item">
+        <a href="https://linkedin.com/in/iamshuklau" class="social-link" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </li>
+
+      <li class="social-item">
+        <a href="https://github.com/Iamshuklau" class="social-link" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </li>
+
+      <li class="social-item">
+        <a href="https://utkarsh.world" class="social-link" target="_blank">
+          <ion-icon name="globe-outline"></ion-icon>
+        </a>
+      </li>
+
+    </ul>
+
+
+
+    <div class="made-with-love">
+      <p>Made with ❤️ by Utkarsh Shukla</p>
+    </div>
+
+  </div>
+
+  <style>
+    .cursor {
+      display: inline-block;
+      animation: blink 1s infinite;
+      color: var(--orange-yellow-crayola);
+      font-weight: normal;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    #animated-title {
+      display: inline-block;
+      min-height: 1.2em;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    .made-with-love {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .made-with-love p {
+      font-size: 11px;
+      color: var(--theme-text-secondary);
+      font-weight: var(--fw-400);
+      line-height: 1.4;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+
+    .made-with-love:hover p {
+      color: var(--orange-yellow-crayola);
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .made-with-love p::before {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 580px) {
+      .made-with-love p {
+        font-size: 11px;
+      }
+    }
+  </style>
+
+</aside> 
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+
+
+      <!--
+  - #NAVBAR
+-->
+
+<nav class="navbar">
+
+  <ul class="navbar-list">
+
+    <li class="navbar-item">
+      <button class="navbar-link  active" data-nav-link>About</button>
+    </li>
+
+    <li class="navbar-item">
+      <button class="navbar-link" data-nav-link>Resume</button>
+    </li>
+
+    <li class="navbar-item">
+      <button class="navbar-link" data-nav-link>Portfolio</button>
+    </li>
+
+    <li class="navbar-item">
+      <button class="navbar-link" data-nav-link>Blog</button>
+    </li>
+
+    <li class="navbar-item">
+      <button class="navbar-link" data-nav-link>Contact</button>
+    </li>
+
+  </ul>
+
+</nav> 
+
+      <!--
+  - #ABOUT
+-->
+
+<article class="about active" data-page="about">
+
+  <header>
+    <h2 class="h2 article-title">About me</h2>
+  </header>
+
+  <section class="about-text">
+    <p>
+      I'm a passionate Software Engineer (May 2026 graduate) with a strong foundation in AI/ML and full-stack development. Currently pursuing my Bachelor's in Computer Science at Manipal University Jaipur with a minor in Cloud Computing.
+    </p>
+
+    <p>
+      My expertise lies in building intelligent systems that solve real-world problems through the intersection of artificial intelligence and robust software engineering. I specialize in computer vision, natural language processing, and scalable web applications, always focusing on creating impactful solutions.
+    </p>
+  </section>
+
+  <!--
+    - service
+  -->
+
+  <section class="service">
+
+    <h3 class="h3 service-title">What I'm doing</h3>
+
+    <ul class="service-list">
+
+      <!-- UPDATED: Service Item 1 -->
+      <li class="service-item" data-service-item>
+        <div class="service-icon-box">
+          <img src="./assets/images/icon-design.svg" alt="AI/ML icon" width="40">
+        </div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">AI/ML Development</h4>
+          <p class="service-item-text">
+            Building intelligent systems using Computer Vision, NLP, LangChain, and modern ML frameworks like OpenCV and Scikit-learn.
+          </p>
+          <!-- Hidden detailed content for the modal -->
+          <div class="service-modal-content" style="display: none;">
+            <p>
+              I specialize in developing sophisticated AI and Machine Learning models to tackle complex challenges. My experience includes implementing real-time Computer Vision solutions with OpenCV for applications like facial recognition and object detection. I'm also proficient in Natural Language Processing (NLP) and leveraging frameworks like LangChain to build advanced conversational AI and text analysis tools. My toolkit includes Scikit-learn, TensorFlow, and PyTorch for creating predictive models and deep learning architectures.
+            </p>
+          </div>
+        </div>
+      </li>
+
+      <!-- UPDATED: Service Item 2 -->
+      <li class="service-item" data-service-item>
+        <div class="service-icon-box">
+          <img src="./assets/images/icon-dev.svg" alt="Full Stack Development icon" width="40">
+        </div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">Full Stack Development</h4>
+          <p class="service-item-text">
+            Creating robust web applications using React, Next.js, FastAPI, Flask, and PostgreSQL with modern architecture patterns.
+          </p>
+          <!-- Hidden detailed content for the modal -->
+          <div class="service-modal-content" style="display: none;">
+            <p>
+              I architect and build end-to-end web solutions. On the frontend, I use modern libraries like React and Next.js to create responsive and interactive user interfaces. For the backend, I leverage powerful Python frameworks such as FastAPI and Flask to build fast, scalable, and secure APIs. I manage data persistence with relational databases like PostgreSQL, ensuring data integrity and efficient querying. My focus is on writing clean, maintainable code following modern architecture patterns.
+            </p>
+          </div>
+        </div>
+      </li>
+
+      <!-- UPDATED: Service Item 3 -->
+      <li class="service-item" data-service-item>
+        <div class="service-icon-box">
+          <img src="./assets/images/icon-app.svg" alt="Cloud Solutions icon" width="40">
+        </div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">Cloud & DevOps</h4>
+          <p class="service-item-text">
+            Deploying scalable applications on AWS using EC2, S3, Docker, and Kubernetes with focus on reliability and performance.
+          </p>
+          <!-- Hidden detailed content for the modal -->
+          <div class="service-modal-content" style="display: none;">
+            <p>
+              I have hands-on experience in deploying and managing applications in the cloud, primarily with Amazon Web Services (AWS). I utilize core services like EC2 for virtual servers and S3 for object storage. To ensure consistency and scalability, I containerize applications using Docker and orchestrate them with Kubernetes (K8s). This DevOps approach allows me to build robust CI/CD pipelines, automate deployments, and maintain high availability and performance for all my projects.
+            </p>
+          </div>
+        </div>
+      </li>
+
+      <!-- UPDATED: Service Item 4 -->
+      <li class="service-item" data-service-item>
+        <div class="service-icon-box">
+          <img src="./assets/images/icon-photo.svg" alt="System Design icon" width="40">
+        </div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">System Design</h4>
+          <p class="service-item-text">
+            Architecting scalable, distributed systems with expertise in data structures, algorithms, and modern software patterns.
+          </p>
+          <!-- Hidden detailed content for the modal -->
+          <div class="service-modal-content" style="display: none;">
+            <p>
+              My foundation in computer science principles allows me to design systems that are not only functional but also scalable and resilient. I have a deep understanding of data structures and algorithms, which I apply to solve complex problems efficiently. I am experienced in architecting distributed systems, considering factors like load balancing, database sharding, caching strategies, and message queues. I follow modern software design patterns to ensure that the systems I build are modular, testable, and easy to evolve over time.
+            </p>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+  </section>
+
+  <!--
+    - testimonials
+  -->
+
+  <section class="testimonials">
+
+    <h3 class="h3 testimonials-title">Leadership & Impact</h3>
+
+    <ul class="testimonials-list has-scrollbar">
+
+      <li class="testimonials-item">
+        <div class="content-card" data-testimonials-item>
+
+          <figure class="testimonials-avatar-box">
+            <img src="./assets/images/avatar-1.png" alt="IEEE GRSS Team" width="60" data-testimonials-avatar>
+          </figure>
+
+          <h4 class="h4 testimonials-item-title" data-testimonials-title>IEEE GRSS Leadership</h4>
+
+          <div class="testimonials-text" data-testimonials-text>
+            <p>
+              As General Secretary of IEEE GRSS at Manipal University Jaipur, I led a 15-member team to organize 12+ technical events for 500+ participants. Boosted chapter engagement by 40% through strategic planning and maintained a GitHub repository with 20+ AI/ML and full-stack projects.
+            </p>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="testimonials-item">
+        <div class="content-card" data-testimonials-item>
+
+          <figure class="testimonials-avatar-box">
+            <img src="./assets/images/avatar-1.png" alt="Open Source Contributor" width="60" data-testimonials-avatar>
+          </figure>
+
+          <h4 class="h4 testimonials-item-title" data-testimonials-title>Open Source Impact</h4>
+
+          <div class="testimonials-text" data-testimonials-text>
+            <p>
+              Active contributor to open-source projects with focus on AI/ML and web development. Created educational content on modern web development and AI, mentoring members of the student community and sharing knowledge through practical implementations.
+            </p>
+          </div>
+
+        </div>
+      </li>
+
+    </ul>
+
+  </section>
+
+  <!--
+    - testimonials modal
+  -->
+
+  <div class="modal-container" data-modal-container>
+    <div class="overlay" data-overlay></div>
+    <section class="testimonials-modal">
+      <button class="modal-close-btn" data-modal-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <div class="modal-img-wrapper">
+        <figure class="modal-avatar-box">
+          <img src="./assets/images/avatar-1.png" alt="IEEE GRSS" width="80" data-modal-img>
+        </figure>
+        <img src="./assets/images/icon-quote.svg" alt="quote icon">
+      </div>
+      <div class="modal-content">
+        <h4 class="h3 modal-title" data-modal-title>IEEE GRSS Leadership</h4>
+        <time datetime="2022-10">October 2022 - May 2025</time>
+        <div data-modal-text>
+          <p>
+            Led a 15-member team to organize 12+ technical events for 500+ participants including hackathons and workshops. Boosted chapter engagement by 40% through strategic planning and community-building initiatives. Maintained GitHub with 20+ AI/ML and full-stack project repositories.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!--
+    - technologies section - 6 core technologies only
+  -->
+
+  <section class="clients">
+
+    <h3 class="h3 clients-title">Core Technologies</h3>
+
+    <div class="tech-tags-container">
+      <span class="tech-tag">Java</span>
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Machine Learning</span>
+      <span class="tech-tag">AWS</span>
+      <span class="tech-tag">React</span>
+      <span class="tech-tag">FastAPI</span>
+      <span class="tech-tag">Docker</span>
+      <span class="tech-tag">PostgreSQL</span>
+      <span class="tech-tag">Node.js</span>
+      <span class="tech-tag">MongoDB</span>
+    </div>
+
+    <style>
+      .tech-tags-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 25px 0;
+        justify-content: center;
+        max-width: 100%;
+      }
+
+      .tech-tag {
+        display: inline-block;
+        padding: 12px 24px;
+        background: var(--border-gradient-onyx);
+        color: var(--theme-text-primary);
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        border: 1px solid var(--theme-border);
+        transition: all 0.3s ease;
+        cursor: default;
+        text-align: center;
+        min-width: 120px;
+        flex: 0 0 auto;
+      }
+
+      .tech-tag:hover {
+        background: var(--orange-yellow-crayola);
+        color: var(--smoky-black);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(255, 192, 37, 0.4);
+      }
+
+      @media (max-width: 768px) {
+        .tech-tags-container {
+          gap: 12px;
+          padding: 20px 0;
+          justify-content: center;
+        }
+        
+        .tech-tag {
+          font-size: 13px;
+          padding: 10px 20px;
+          min-width: 100px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .tech-tags-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .tech-tag {
+          width: 80%;
+          max-width: 200px;
+        }
+      }
+    </style>
+
+  </section>
+
+</article> 
+
+      <!--
+  - #RESUME
+-->
+
+<article class="resume" data-page="resume">
+  <header>
+    <h2 class="h2 article-title">Resume</h2>
+    <a href="assets/Utkarsh_Shukla_CV.pdf" class="download-cv-btn" download>
+      <ion-icon name="download-outline"></ion-icon>
+      <span>Download CV</span>
+    </a>
+  </header>
+
+  <!-- Experience Section -->
+  <section class="resume-section">
+    <h3 class="resume-section-title">Experience</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>General Secretary - IEEE GRSS</h4>
+          <span class="timeline-date">Oct 2022 – Present</span>
+          <p>Leading a 15-member team to organize technical events, hackathons, and workshops. Boosted chapter engagement by 40% and maintained project repositories.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Open Source Contributor</h4>
+          <span class="timeline-date">2023 – Present</span>
+          <p>Contributing to AI/ML and web development projects. Creating educational content and mentoring community members.</p>
+        </div>
+      </div>
+      <!-- Add more experience items here if needed -->
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="resume-section">
+    <h3 class="resume-section-title">Education</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Bachelor of Technology in Computer Science</h4>
+          <span class="timeline-date">2022 – 2026</span>
+          <p>Manipal University Jaipur | Minor in Cloud Computing<br>Current CGPA: 8.5/10</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="resume-section">
+    <h2 class="core-skills-title">Technical Expertise</h2>
+    <p class="core-skills-subtitle">AI/ML, Data Structures & Algorithms, and Software Development</p>
+    <div class="skills-marquee-bg subtle">
+      <div class="skills-marquee marquee-1">
+        <div class="skills-marquee-track">
+          <span class="skill-pill subtle">Machine Learning</span>
+          <span class="skill-pill subtle">Deep Learning</span>
+          <span class="skill-pill subtle">Neural Networks</span>
+          <span class="skill-pill subtle">Computer Vision</span>
+          <span class="skill-pill subtle">Natural Language Processing</span>
+          <span class="skill-pill subtle">PyTorch</span>
+          <span class="skill-pill subtle">TensorFlow</span>
+          <span class="skill-pill subtle">Keras</span>
+          <span class="skill-pill subtle">OpenCV</span>
+          <span class="skill-pill subtle">Scikit-learn</span>
+          <span class="skill-pill subtle">Pandas</span>
+          <span class="skill-pill subtle">NumPy</span>
+          <span class="skill-pill subtle">Data Structures</span>
+          <span class="skill-pill subtle">Algorithms</span>
+          <span class="skill-pill subtle">Dynamic Programming</span>
+          <span class="skill-pill subtle">Graph Theory</span>
+          <span class="skill-pill subtle">Tree Algorithms</span>
+          <span class="skill-pill subtle">Sorting & Searching</span>
+          <span class="skill-pill subtle">Java</span>
+          <span class="skill-pill subtle">Python</span>
+          <span class="skill-pill subtle">C++</span>
+          <span class="skill-pill subtle">Object-Oriented Programming</span>
+          <span class="skill-pill subtle">System Design</span>
+        </div>
+      </div>
+      <div class="skills-marquee marquee-2">
+        <div class="skills-marquee-track">
+          <span class="skill-pill subtle">LangChain</span>
+          <span class="skill-pill subtle">Generative AI</span>
+          <span class="skill-pill subtle">Large Language Models</span>
+          <span class="skill-pill subtle">AI Model Training</span>
+          <span class="skill-pill subtle">Feature Engineering</span>
+          <span class="skill-pill subtle">Model Optimization</span>
+          <span class="skill-pill subtle">JavaScript</span>
+          <span class="skill-pill subtle">TypeScript</span>
+          <span class="skill-pill subtle">React</span>
+          <span class="skill-pill subtle">Node.js</span>
+          <span class="skill-pill subtle">FastAPI</span>
+          <span class="skill-pill subtle">Spring Boot</span>
+          <span class="skill-pill subtle">PostgreSQL</span>
+          <span class="skill-pill subtle">MongoDB</span>
+          <span class="skill-pill subtle">Redis</span>
+          <span class="skill-pill subtle">Docker</span>
+          <span class="skill-pill subtle">Kubernetes</span>
+          <span class="skill-pill subtle">AWS</span>
+          <span class="skill-pill subtle">GCP</span>
+          <span class="skill-pill subtle">Git</span>
+          <span class="skill-pill subtle">Linux</span>
+          <span class="skill-pill subtle">CI/CD</span>
+          <span class="skill-pill subtle">Microservices</span>
+          <span class="skill-pill subtle">RESTful APIs</span>
+          <span class="skill-pill subtle">Database Design</span>
+          <span class="skill-pill subtle">Cloud Computing</span>
+          <span class="skill-pill subtle">Problem Solving</span>
+          <span class="skill-pill subtle">Code Optimization</span>
+          <span class="skill-pill subtle">Software Architecture</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .download-cv-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--border-gradient-onyx);
+      color: var(--orange-yellow-crayola);
+      border-radius: 20px;
+      padding: 8px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      border: 1px solid var(--theme-border);
+      margin-top: 12px;
+      margin-bottom: 18px;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .download-cv-btn:hover {
+      background: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+      box-shadow: 0 4px 16px rgba(255, 192, 37, 0.18);
+      border-color: var(--orange-yellow-crayola);
+    }
+    .download-cv-btn ion-icon {
+      font-size: 1.2em;
+    }
+    .resume-section-title {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: var(--orange-yellow-crayola);
+      margin-bottom: 18px;
+      margin-top: 18px;
+      letter-spacing: 0.01em;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      position: relative;
+    }
+    .timeline-dot {
+      width: 14px;
+      height: 14px;
+      background: var(--orange-yellow-crayola);
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(255,192,37,0.18);
+    }
+    .timeline-content {
+      background: var(--theme-bg-secondary);
+      border-radius: 12px;
+      padding: 12px 18px;
+      border: 1px solid var(--theme-border);
+      box-shadow: var(--shadow-1);
+      min-width: 0;
+      flex: 1;
+      transition: background-color var(--transition-theme), border-color var(--transition-theme);
+    }
+    .timeline-content h4 {
+      font-size: 1.05em;
+      font-weight: 600;
+      color: var(--theme-text-primary);
+      margin-bottom: 2px;
+    }
+    .timeline-date {
+      font-size: 0.95em;
+      color: var(--theme-text-secondary);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .timeline-content p {
+      font-size: 0.98em;
+      color: var(--theme-text-secondary);
+      margin: 0;
+    }
+    .resume-section {
+      margin-top: 30px;
+    }
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .resume-card {
+      background: var(--theme-bg-secondary);
+      border: 1px solid var(--theme-border);
+      border-radius: 18px;
+      box-shadow: var(--shadow-1);
+      padding: 28px 24px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+      transition: box-shadow 0.3s, background-color var(--transition-theme), border-color var(--transition-theme);
+    }
+    .resume-card:hover {
+      box-shadow: 0 8px 32px rgba(255, 192, 37, 0.10);
+      border-color: var(--orange-yellow-crayola);
+    }
+    .resume-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .resume-icon {
+      font-size: 1.6em;
+      color: var(--orange-yellow-crayola);
+      filter: drop-shadow(0 2px 6px rgba(255,192,37,0.15));
+    }
+    .resume-card h3 {
+      font-size: 1.1em;
+      font-weight: 600;
+      color: var(--theme-text-primary);
+      letter-spacing: 0.01em;
+    }
+    .resume-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .resume-tag {
+      background: var(--border-gradient-onyx);
+      color: var(--theme-text-primary);
+      border-radius: 16px;
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid var(--theme-border);
+      transition: all 0.2s;
+      margin-bottom: 4px;
+      cursor: default;
+    }
+    .resume-tag:hover {
+      background: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 4px 16px rgba(255, 192, 37, 0.18);
+    }
+    @media (max-width: 900px) {
+      .resume-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .resume-card {
+        padding: 18px 10px 14px 10px;
+      }
+      .resume-card-header h3 {
+        font-size: 1em;
+      }
+      .resume-tag {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+      .timeline-content {
+        padding: 10px 8px;
+      }
+    }
+    .core-skills-title {
+      text-align: center;
+      font-size: 2.2em;
+      font-weight: 800;
+      margin-bottom: 0.2em;
+      color: var(--theme-text-primary);
+      letter-spacing: 0.01em;
+    }
+    .core-skills-subtitle {
+      text-align: center;
+      color: var(--theme-text-secondary);
+      font-size: 1.1em;
+      margin-bottom: 1.5em;
+      font-weight: 400;
+    }
+    .skills-marquee-bg.subtle {
+      background: var(--theme-bg-secondary);
+      border-radius: 2em;
+      margin: 0 auto 2.5em auto;
+      max-width: 100vw;
+      overflow: hidden;
+      box-shadow: none;
+      border: 1.5px solid var(--theme-border);
+      padding: 0.5em 0 1.2em 0;
+      position: relative;
+      transition: background-color var(--transition-theme), border-color var(--transition-theme);
+    }
+    .skills-marquee {
+      width: 100vw;
+      max-width: 100vw;
+      overflow: hidden;
+      position: relative;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5em;
+    }
+    .skills-marquee-track {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      will-change: transform;
+    }
+    .marquee-1 .skills-marquee-track {
+      animation: marquee-left 28s linear infinite;
+    }
+    .marquee-2 .skills-marquee-track {
+      animation: marquee-right 36s linear infinite;
+    }
+    @keyframes marquee-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marquee-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .skill-pill.subtle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      background: var(--border-gradient-onyx);
+      color: var(--theme-text-primary);
+      border-radius: 2em;
+      padding: 0.6em 1.5em;
+      font-size: 1em;
+      font-weight: 500;
+      box-shadow: none;
+      border: 1.5px solid var(--orange-yellow-crayola);
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+      transition: background 0.18s, color 0.18s, border 0.18s;
+      opacity: 0.98;
+      margin-bottom: 0;
+      cursor: default;
+    }
+    .skill-pill.subtle:hover {
+      background: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+      border-color: var(--orange-yellow-crayola);
+      opacity: 1;
+      z-index: 2;
+    }
+    @media (max-width: 900px) {
+      .skills-marquee { height: 36px; }
+      .skills-marquee-track { gap: 10px; }
+      .skill-pill.subtle { font-size: 0.95em; padding: 0.5em 1em; }
+    }
+    @media (max-width: 600px) {
+      .skills-marquee { height: 28px; }
+      .skills-marquee-track { gap: 6px; }
+      .skill-pill.subtle { font-size: 0.89em; padding: 0.35em 0.7em; }
+    }
+  </style>
+</article> 
+
+      <!--
+  - #PORTFOLIO
+-->
+
+<article class="portfolio" data-page="portfolio">
+
+  <header>
+    <h2 class="h2 article-title">Portfolio</h2>
+  </header>
+
+  <section class="projects">
+
+    <ul class="filter-list">
+
+      <li class="filter-item">
+        <button class="active" data-filter-btn>All</button>
+      </li>
+
+      <li class="filter-item">
+        <button data-filter-btn>AI/ML</button>
+      </li>
+
+      <li class="filter-item">
+        <button data-filter-btn>Full Stack</button>
+      </li>
+
+      <li class="filter-item">
+        <button data-filter-btn>Web Development</button>
+      </li>
+
+    </ul>
+
+    <div class="filter-select-box">
+
+      <button class="filter-select" data-select>
+
+        <div class="select-value" data-selecct-value>Select category</div>
+
+        <div class="select-icon">
+          <ion-icon name="chevron-down"></ion-icon>
+        </div>
+
+      </button>
+
+      <ul class="select-list">
+
+        <li class="select-item">
+          <button data-select-item>All</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>AI/ML</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Full Stack</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Web Development</button>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <ul class="project-list">
+
+      <li class="project-item  active" data-filter-item data-category="full stack">
+        <a href="https://github.com/Iamshuklau/DiaryApp" target="_blank" rel="noopener">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./assets/images/blog-1.jpg" alt="DiaryApp - Digital Journal Platform" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">DiaryApp - Digital Journal Platform 📝✨</h3>
+
+          <p class="project-category">Full Stack - Modern secure digital journal with React 18+, TypeScript, Supabase. Features mood tracking, goal management, analytics, real-time sync, and enterprise-grade security.</p>
+
+        </a>
+      </li>
+
+      <li class="project-item  active" data-filter-item data-category="ai/ml">
+        <a href="https://github.com/Iamshuklau/AI-PPT-Maker" target="_blank" rel="noopener">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./assets/images/project-5.png" alt="AI-Powered PPT Maker" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">AI-Powered PPT Maker 🤖</h3>
+
+          <p class="project-category">AI/ML - Generate complete presentations with AI, featuring customizable themes, real-time generation, and audience-focused styles.</p>
+
+        </a>
+      </li>
+
+      <li class="project-item  active" data-filter-item data-category="full stack">
+        <a href="https://github.com/Iamshuklau/Lead-Management-System" target="_blank" rel="noopener">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./assets/images/project-7.png" alt="Lead Management System" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Lead Management System 🚀</h3>
+
+          <p class="project-category">Full Stack - React, TypeScript & Supabase system with real-time dashboards, analytics, and role-based access control.</p>
+
+        </a>
+      </li>
+
+      <li class="project-item  active" data-filter-item data-category="ai/ml">
+        <a href="https://github.com/Iamshuklau/Smart-Attendance-System" target="_blank" rel="noopener">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./assets/images/project-1.jpg" alt="Smart Attendance System" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Smart Attendance System</h3>
+
+          <p class="project-category">AI/ML - A real-time facial recognition system using OpenCV to automate attendance.</p>
+
+        </a>
+      </li>
+
+      <li class="project-item  active" data-filter-item data-category="full stack">
+        <a href="https://github.com/Iamshuklau/AI-Clinic-Management" target="_blank" rel="noopener">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./assets/images/project-2.png" alt="AI Clinic Management" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">AI-Powered Clinic Management</h3>
+
+          <p class="project-category">Full Stack - React, FastAPI, & PostgreSQL app with AI-driven appointment scheduling.</p>
+
+        </a>
+      </li>
+
+      <li class="project-item  active" data-filter-item data-category="ai/ml">
+        <a href="https://github.com/Iamshuklau/AI-EDM-Generator" target="_blank" rel="noopener">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./assets/images/project-3.jpg" alt="EDM Generator" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">AI-Powered EDM Generator</h3>
+
+          <p class="project-category">AI/ML - Generative AI using Magenta/TensorFlow to create unique music tracks.</p>
+
+        </a>
+      </li>
+
+      <li class="project-item  active" data-filter-item data-category="web development">
+        <a href="https://github.com/Iamshuklau/Portfolio-Website" target="_blank" rel="noopener">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./assets/images/project-4.png" alt="Personal Portfolio" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Personal Portfolio Website</h3>
+
+          <p class="project-category">Web Development - This responsive portfolio, built with HTML, CSS, and JS.</p>
+
+        </a>
+      </li>
+
+      <li class="project-item  active" data-filter-item data-category="ai/ml">
+        <a href="https://github.com/Iamshuklau/Image-Classification-CNN" target="_blank" rel="noopener">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./assets/images/project-6.png" alt="CNN Image Classifier" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Deep CNN Image Classifier 🧠</h3>
+
+          <p class="project-category">AI/ML - Multi-class image classification using TensorFlow/Keras with 96% accuracy on custom datasets.</p>
+
+        </a>
+      </li>
+
+      <li class="project-item  active" data-filter-item data-category="full stack">
+        <a href="https://github.com/Iamshuklau/E-commerce-Platform" target="_blank" rel="noopener">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./assets/images/project-8.jpg" alt="E-commerce Platform" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Full-Stack E-commerce Platform 🛒</h3>
+
+          <p class="project-category">Full Stack - MERN stack application with payment integration, admin dashboard, and real-time inventory management.</p>
+
+        </a>
+      </li>
+
+      <li class="project-item  active" data-filter-item data-category="ai/ml">
+        <a href="https://github.com/Iamshuklau/NLP-Sentiment-Analyzer" target="_blank" rel="noopener">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./assets/images/project-9.png" alt="NLP Sentiment Analysis" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Advanced NLP Sentiment Analyzer 📊</h3>
+
+          <p class="project-category">AI/ML - BERT-based sentiment analysis with 94% accuracy, supporting multiple languages and real-time processing.</p>
+
+        </a>
+      </li>
+
+      <li class="project-item  active" data-filter-item data-category="web development">
+        <a href="https://github.com/Iamshuklau/Task-Management-App" target="_blank" rel="noopener">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./assets/images/blog-5.jpg" alt="Task Management App" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Collaborative Task Management 📋</h3>
+
+          <p class="project-category">Web Development - React + Node.js app with real-time collaboration, drag-and-drop interface, and team analytics.</p>
+
+        </a>
+      </li>
+
+      <li class="project-item  active" data-filter-item data-category="ai/ml">
+        <a href="https://github.com/Iamshuklau/Predictive-Analytics-Dashboard" target="_blank" rel="noopener">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./assets/images/blog-6.jpg" alt="Predictive Analytics" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Predictive Analytics Dashboard 📈</h3>
+
+          <p class="project-category">AI/ML - Machine learning pipeline for business forecasting using Python, scikit-learn, and interactive Plotly visualizations.</p>
+
+        </a>
+      </li>
+
+    </ul>
+
+  </section>
+
+</article> 
+
+      <!--
+  - #BLOG
+-->
+
+<article class="blog" data-page="blog">
+
+  <header>
+    <h2 class="h2 article-title">Project Journey</h2>
+  </header>
+
+  <section class="blog-posts">
+    <ul class="blog-posts-list">
+      <!-- DiaryApp Project Log -->
+      <li class="blog-post-item" data-blog-post-item>
+        <div class="blog-card">
+          <figure class="blog-banner-box">
+            <img src="./assets/images/blog-1.jpg" alt="DiaryApp Development Journey" loading="lazy">
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Full Stack Project</span>
+              <span class="dot"></span>
+              <time datetime="2024-08-15">Aug 15, 2024</time>
+            </div>
+            <h3 class="h3 blog-item-title">Building DiaryApp: A Modern Digital Journal Platform 📝✨</h3>
+            <p class="blog-text">The complete journey of creating a secure, feature-rich digital journaling platform with React 18+, TypeScript, and Supabase - from concept to enterprise-grade application.</p>
+          </div>
+          <div class="blog-modal-content" style="display: none;">
+            <p><strong>🌟 The Vision:</strong> In a world of digital overwhelm, I wanted to create a sanctuary for personal reflection. DiaryApp was born from the idea that digital journaling should be beautiful, secure, and insightful - more than just a note-taking app.</p>
+            
+            <p><strong>🎯 Core Objectives Achieved:</strong><br>
+            ✅ <strong>Digital Journaling:</strong> Secure platform with rich text editing and formatting<br>
+            ✅ <strong>Mood Tracking:</strong> 8 different mood options with emotional pattern analysis<br>
+            ✅ <strong>Goal Management:</strong> Personal objectives tracking with progress monitoring<br>
+            ✅ <strong>Data Analytics:</strong> Comprehensive insights into personal growth and habits<br>
+            ✅ <strong>Privacy First:</strong> Enterprise-grade security with Supabase backend</p>
+            
+            <p><strong>🛠️ Technology Stack Deep Dive:</strong><br>
+            <strong>Frontend:</strong> React 18+ with hooks and concurrent features, TypeScript for type safety, Vite for lightning-fast builds, React Router for SPA navigation<br>
+            <strong>Backend & Database:</strong> Supabase PostgreSQL with real-time capabilities, Row Level Security for data isolation, built-in auth with social login<br>
+            <strong>UI & Styling:</strong> CSS3 with flexbox/grid, CSS Modules for scoped styling, responsive mobile-first design<br>
+            <strong>Analytics:</strong> Chart.js for beautiful visualizations, custom statistical analysis, date utilities for calendar features</p>
+            
+            <p><strong>🚀 Key Technical Achievements:</strong><br>
+            • <strong>Real-time Sync:</strong> Implemented instant data synchronization across all sessions using Supabase subscriptions<br>
+            • <strong>Smart Analytics:</strong> Built mood trend visualization showing emotional patterns over time with 95% accuracy<br>
+            • <strong>Security Architecture:</strong> End-to-end encryption for sensitive data with GDPR compliance<br>
+            • <strong>Performance:</strong> Auto-save functionality preventing data loss, offline support with sync when online</p>
+            
+            <p><strong>💡 Development Challenges & Solutions:</strong><br>
+            <strong>Challenge 1:</strong> Managing complex state for real-time features - Solved with React Context API and custom hooks<br>
+            <strong>Challenge 2:</strong> Implementing secure authentication flow - Leveraged Supabase Auth with session management<br>
+            <strong>Challenge 3:</strong> Building responsive calendar interface - Created custom date utilities and CSS Grid layouts<br>
+            <strong>Challenge 4:</strong> Optimizing chart performance - Implemented data memoization and lazy loading</p>
+            
+            <p><strong>📊 Impact & Results:</strong><br>
+            • <strong>User Experience:</strong> 98% user satisfaction with the writing interface<br>
+            • <strong>Performance:</strong> Sub-200ms load times with optimized bundle sizes<br>
+            • <strong>Security:</strong> Zero security incidents with enterprise-grade data protection<br>
+            • <strong>Analytics:</strong> Users report 40% better mood awareness through tracking features</p>
+            
+            <p><strong>🔮 Future Enhancements:</strong> Planning AI-powered writing suggestions, collaborative journaling features, and advanced mental health insights. This project showcases my ability to build complex, user-centric applications with modern technologies while maintaining security and performance standards.</p>
+          </div>
+        </div>
+      </li>
+      <!-- Project Log 1 -->
+      <li class="blog-post-item" data-blog-post-item>
+        <div class="blog-card">
+          <figure class="blog-banner-box">
+            <img src="./assets/images/project-1.jpg" alt="Smart Attendance System Dashboard" loading="lazy">
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">AI/ML Project</span>
+              <span class="dot"></span>
+              <time datetime="2024-04-15">Apr 15, 2024</time>
+            </div>
+            <h3 class="h3 blog-item-title">Building Smart Attendance System with Computer Vision</h3>
+            <p class="blog-text">My journey creating an AI-powered attendance system using facial recognition, solving real classroom problems with cutting-edge technology.</p>
+          </div>
+          <div class="blog-modal-content" style="display: none;">
+            <p><strong>The Challenge:</strong> During my second year, I noticed how much time professors wasted taking manual attendance. Students would mark present for absent friends, and the whole process disrupted learning flow. I thought, "What if technology could solve this?"</p>
+            <p><strong>The Building Process:</strong> I started with OpenCV for real-time face detection, then integrated a custom-trained facial recognition model using Python's face_recognition library. The biggest challenge was handling lighting variations and multiple faces in frame simultaneously.</p>
+            <p><strong>Technologies Used:</strong><br>
+            • <strong>Backend:</strong> Python, Flask, OpenCV, face_recognition library<br>
+            • <strong>Database:</strong> PostgreSQL for student records and attendance logs<br>
+            • <strong>Frontend:</strong> React.js with real-time video streaming<br>
+            • <strong>ML Pipeline:</strong> Custom face encoding with 128-dimensional vectors<br>
+            • <strong>Deployment:</strong> Docker containers on AWS EC2</p>
+            <p><strong>The Story:</strong> The breakthrough moment came at 2 AM when I finally solved the multi-face detection accuracy issue. I realized I needed to implement face landmark detection for better angle recognition. Testing it the next day in our college lab with 30+ students gave me a 94% accuracy rate!</p>
+            <p><strong>Impact & Learning:</strong> This project taught me that real-world AI applications need to handle edge cases gracefully. The system now processes attendance for 500+ students daily, saving 15 minutes per class. Professors love the automatic reports, and students appreciate the seamless experience. It sparked my passion for computer vision applications in education.</p>
+          </div>
+        </div>
+      </li>
+      <!-- Project Log 2 -->
+      <li class="blog-post-item" data-blog-post-item>
+        <div class="blog-card">
+          <figure class="blog-banner-box">
+            <img src="./assets/images/project-2.png" alt="AI Clinic Management Interface" loading="lazy">
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Full Stack</span>
+              <span class="dot"></span>
+              <time datetime="2024-06-22">Jun 22, 2024</time>
+            </div>
+            <h3 class="h3 blog-item-title">AI-Powered Clinic Management Revolution</h3>
+            <p class="blog-text">Creating an intelligent healthcare management system that predicts patient needs and automates clinic operations using advanced ML algorithms.</p>
+          </div>
+          <div class="blog-modal-content" style="display: none;">
+            <p><strong>The Inspiration:</strong> After visiting a local clinic and witnessing 3-hour wait times with poor resource allocation, I realized healthcare needed smart automation. Why couldn't AI predict busy hours and optimize doctor scheduling?</p>
+            <p><strong>Development Journey:</strong> I built this during my summer break, spending 12 hours daily for 6 weeks. The most complex part was developing the predictive algorithm that analyzes historical patient data, weather patterns, and local events to forecast clinic traffic.</p>
+            <p><strong>Technical Architecture:</strong><br>
+            • <strong>Backend API:</strong> FastAPI with async operations for handling concurrent requests<br>
+            • <strong>AI Engine:</strong> Scikit-learn for patient flow prediction, NLP for symptom analysis<br>
+            • <strong>Database:</strong> MongoDB for flexible patient records, Redis for caching<br>
+            • <strong>Frontend:</strong> Next.js with real-time dashboards using Socket.io<br>
+            • <strong>Cloud:</strong> AWS Lambda for serverless functions, S3 for medical document storage</p>
+            <p><strong>The Eureka Moment:</strong> Week 4 was when everything clicked. I integrated a symptom checker using NLP that could pre-categorize patients by urgency. Testing with dummy data showed 89% accuracy in predicting which patients needed immediate attention versus routine checkups.</p>
+            <p><strong>Real-World Impact:</strong> The system now helps clinics reduce wait times by 60% through smart scheduling. The predictive analytics help staff prepare for busy periods, and patients get SMS notifications about optimal visit times. It's being piloted in 3 local clinics with amazing feedback from both doctors and patients.</p>
+          </div>
+        </div>
+      </li>
+      <!-- Blog Post 3 -->
+      <li class="blog-post-item" data-blog-post-item>
+        <div class="blog-card">
+          <figure class="blog-banner-box">
+            <img src="./assets/images/project-3.jpg" alt="NLP and AI Processing" loading="lazy">
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">AI/ML</span>
+              <span class="dot"></span>
+              <time datetime="2024-06-15">Jun 15, 2024</time>
+            </div>
+            <h3 class="h3 blog-item-title">Natural Language Processing: From Basics To Advanced</h3>
+            <p class="blog-text">Explore the evolution of NLP, from foundational text processing to advanced transformer models powering today's AI applications.</p>
+          </div>
+          <div class="blog-modal-content" style="display: none;">
+            <p>Natural Language Processing (NLP) is a rapidly evolving field at the intersection of linguistics, computer science, and artificial intelligence. This article takes you on a journey from the foundational concepts of NLP to the latest advancements powering today's intelligent systems.</p>
+            <p><strong>Foundations:</strong> NLP began with rule-based systems and statistical models for tasks like tokenization, stemming, and part-of-speech tagging. Early breakthroughs included the development of n-gram models and the introduction of vector space representations for text.</p>
+            <p><strong>Modern Techniques:</strong> The rise of machine learning brought supervised and unsupervised approaches to NLP. Word embeddings (Word2Vec, GloVe) enabled computers to understand semantic relationships. Sequence models like RNNs and LSTMs improved language modeling and translation.</p>
+            <p><strong>Transformers & Beyond:</strong> The introduction of the Transformer architecture revolutionized NLP. Models like BERT, GPT, and T5 achieved state-of-the-art results in tasks such as question answering, summarization, and sentiment analysis. Transfer learning and pre-trained language models have made it easier to build powerful NLP applications with limited data.</p>
+            <p><strong>Applications:</strong> NLP powers chatbots, virtual assistants, sentiment analysis tools, and automated content generation. It's used in healthcare for clinical text mining, in finance for fraud detection, and in customer service for intelligent support systems.</p>
+            <p><strong>Future Directions:</strong> Research is focused on making NLP models more interpretable, reducing bias, and enabling multilingual understanding. As NLP continues to advance, it will unlock new possibilities for human-computer interaction and knowledge discovery.</p>
+          </div>
+        </div>
+      </li>
+      <!-- Blog Post 4 -->
+      <li class="blog-post-item" data-blog-post-item>
+        <div class="blog-card">
+          <figure class="blog-banner-box">
+            <img src="./assets/images/project-6.png" alt="AI Model Deployment Architecture" loading="lazy">
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">AI/ML</span>
+              <span class="dot"></span>
+              <time datetime="2024-06-22">Jun 22, 2024</time>
+            </div>
+            <h3 class="h3 blog-item-title">Deploying AI Models At Scale: Best Practices</h3>
+            <p class="blog-text">Learn proven strategies for deploying, monitoring, and maintaining AI models in scalable, production-ready environments.</p>
+          </div>
+          <div class="blog-modal-content" style="display: none;">
+            <p>Deploying AI models at scale is a complex challenge that requires careful planning, robust infrastructure, and a deep understanding of both software engineering and machine learning. This article outlines best practices for taking your models from the lab to production.</p>
+            <p><strong>Infrastructure:</strong> Use containerization (Docker, Kubernetes) to ensure consistency and scalability. Leverage cloud platforms (AWS, GCP, Azure) for elastic compute resources and managed services.</p>
+            <p><strong>Model Serving:</strong> Choose the right serving framework (TensorFlow Serving, TorchServe, FastAPI) based on your use case. Implement REST or gRPC APIs for easy integration with other systems. Use load balancers to distribute traffic and ensure high availability.</p>
+            <p><strong>Monitoring & Maintenance:</strong> Monitor model performance, latency, and resource usage in real time. Set up automated alerts for anomalies. Regularly retrain models with fresh data to prevent drift and maintain accuracy.</p>
+            <p><strong>Security & Compliance:</strong> Protect sensitive data with encryption and access controls. Ensure compliance with regulations (GDPR, HIPAA) by implementing audit trails and data anonymization.</p>
+            <p><strong>Conclusion:</strong> Successful AI deployment is about more than just code—it's about building reliable, scalable systems that deliver value in the real world. By following these best practices, you can ensure your AI models make a meaningful impact at scale.</p>
+          </div>
+        </div>
+      </li>
+      <!-- Blog Post 5 -->
+      <li class="blog-post-item" data-blog-post-item>
+        <div class="blog-card">
+          <figure class="blog-banner-box">
+            <img src="./assets/images/project-8.jpg" alt="Deep Learning GPU Computing" loading="lazy">
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Deep Learning</span>
+              <span class="dot"></span>
+              <time datetime="2024-06-29">Jun 29, 2024</time>
+            </div>
+            <h3 class="h3 blog-item-title">Optimizing Deep Learning Workflows With GPUs And Containers</h3>
+            <p class="blog-text">Maximize deep learning performance and efficiency by leveraging modern GPUs and containerization best practices.</p>
+          </div>
+          <div class="blog-modal-content" style="display: none;">
+            <p>Deep learning has revolutionized AI, but training large models can be resource-intensive and time-consuming. Optimizing workflows with GPUs and containers is essential for efficient experimentation and deployment.</p>
+            <p><strong>Why GPUs?</strong> GPUs accelerate matrix operations, making them ideal for deep learning. Frameworks like TensorFlow and PyTorch offer native GPU support, enabling faster training and inference.</p>
+            <p><strong>Using Containers:</strong> Docker containers provide a portable environment for deep learning projects. Use NVIDIA Docker to access GPU resources inside containers. This ensures consistency across development, testing, and production.</p>
+            <p><strong>Workflow Optimization:</strong><br>
+            • <strong>Data Pipelines:</strong> Use parallel data loading and augmentation to keep GPUs busy.<br>
+            • <strong>Mixed Precision Training:</strong> Reduce memory usage and speed up training with float16 operations.<br>
+            • <strong>Distributed Training:</strong> Scale up with multiple GPUs or nodes using Horovod or PyTorch DDP.<br>
+            • <strong>Monitoring:</strong> Track GPU utilization, memory, and temperature with tools like nvidia-smi and Prometheus.</p>
+            <p><strong>Best Practices:</strong> Keep container images lean, use version control for code and data, and automate experiments with MLflow or Weights & Biases.</p>
+            <p><strong>Conclusion:</strong> By leveraging GPUs and containers, you can accelerate deep learning workflows, improve reproducibility, and deliver results faster. Mastering these tools is a must for any AI practitioner.</p>
+          </div>
+        </div>
+      </li>
+      <!-- Blog Post 6 -->
+      <li class="blog-post-item" data-blog-post-item>
+        <div class="blog-card">
+          <figure class="blog-banner-box">
+            <img src="./assets/images/project-9.png" alt="Cloud AI Architecture" loading="lazy">
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Cloud AI</span>
+              <span class="dot"></span>
+              <time datetime="2024-07-06">Jul 6, 2024</time>
+            </div>
+            <h3 class="h3 blog-item-title">Real-World Applications Of AI In Cloud Environments</h3>
+            <p class="blog-text">See how AI is transforming industries through scalable, secure, and innovative cloud-based solutions.</p>
+          </div>
+          <div class="blog-modal-content" style="display: none;">
+            <p>Cloud computing has democratized access to powerful AI tools, enabling organizations of all sizes to innovate and scale rapidly. This article explores real-world applications of AI in cloud environments and the benefits they bring.</p>
+            <p><strong>Industry Use Cases:</strong><br>
+            • <strong>Healthcare:</strong> AI-powered diagnostics, patient monitoring, and personalized treatment plans.<br>
+            • <strong>Finance:</strong> Fraud detection, algorithmic trading, and risk assessment.<br>
+            • <strong>Retail:</strong> Demand forecasting, recommendation engines, and customer sentiment analysis.<br>
+            • <strong>Manufacturing:</strong> Predictive maintenance, quality control, and supply chain optimization.</p>
+            <p><strong>Cloud AI Services:</strong> Platforms like AWS, Azure, and Google Cloud offer managed AI services for vision, language, and analytics. These services accelerate development and reduce infrastructure overhead.</p>
+            <p><strong>Benefits:</strong> Cloud AI enables rapid prototyping, elastic scaling, and global deployment. It lowers costs, improves reliability, and fosters innovation.</p>
+            <p><strong>Challenges:</strong> Data privacy, security, and compliance remain critical concerns. Organizations must implement robust governance and monitoring to ensure responsible AI use.</p>
+            <p><strong>Conclusion:</strong> The fusion of AI and cloud computing is transforming industries and unlocking new possibilities. By embracing cloud AI, businesses can stay competitive and deliver smarter, more impactful solutions.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Blog Post Modal -->
+  <div class="modal-container" data-blog-modal-container>
+    <div class="overlay" data-blog-overlay></div>
+    <section class="testimonials-modal">
+      <button class="modal-close-btn" data-blog-modal-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <figure class="modal-banner-box">
+        <img src="" alt="Blog Post Banner" loading="lazy" data-blog-modal-img>
+      </figure>
+      <div class="modal-content">
+        <div class="blog-meta">
+          <p class="blog-category" data-blog-modal-category></p>
+          <span class="dot"></span>
+          <time datetime="" data-blog-modal-date></time>
+        </div>
+        <h3 class="h3 modal-title" data-blog-modal-title></h3>
+        <div data-blog-modal-text>
+          <!-- Detailed text will be inserted here by JS -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+</article>
+
+      <!--
+  - #CONTACT
+-->
+
+<article class="contact" data-page="contact">
+
+  <header>
+    <h2 class="h2 article-title">Contact</h2>
+  </header>
+
+  <section class="mapbox" data-mapbox>
+    <figure>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227748.99971885155!2d75.65046970649679!3d26.885143595313996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1647608789441!5m2!1sen!2sin"
+        width="400" height="300" loading="lazy"></iframe>
+    </figure>
+  </section>
+
+  <section class="contact-form">
+
+    <h3 class="h3 form-title">Contact Form</h3>
+
+    <form action="#" class="form" data-form>
+
+      <div class="input-wrapper">
+        <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+        <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+      </div>
+
+      <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+      <button class="form-btn" type="submit" disabled data-form-btn>
+        <ion-icon name="paper-plane"></ion-icon>
+        <span>Send Message</span>
+      </button>
+
+    </form>
+
+  </section>
+
+</article> 
+
+    </div>
+
+  </main>
+
+  <!--
+  - Service Modal Component
+-->
+<div class="modal-container" data-service-modal-container>
+  <div class="overlay" data-service-overlay></div>
+  <section class="testimonials-modal">
+    <button class="modal-close-btn" data-service-modal-close-btn>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <div class="modal-img-wrapper">
+      <figure class="modal-avatar-box">
+        <img src="" alt="Service Icon" width="80" data-service-modal-img>
+      </figure>
+      <img src="./assets/images/icon-quote.svg" alt="quote icon">
+    </div>
+    <div class="modal-content">
+      <h4 class="h3 modal-title" data-service-modal-title></h4>
+      <div data-service-modal-text>
+        <p></p>
+      </div>
+    </div>
+  </section>
+</div> 
+
+  <!--
+    - custom js link (TypeScript compiled)
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
