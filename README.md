@@ -5,7 +5,19 @@
 [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-404D59?style=flat&logo=express)](https://expressjs.com/)
 
-> A modern, responsive portfolio website showcasing my journey as a Software Engineer specializing in AI/ML and Full-Stack Development.
+> A stunning, fully responsive portfolio website showcasing my journey as a Software Engineer specializing in AI/ML and Full-Stack Development. Features an interactive constellation background, smooth animations, and a functional contact form powered by modern web technologies.
+
+## 🌐 Live Demo
+
+🚀 **[View Live Portfolio](https://portfolio2-0-iamshuklau.vercel.app)** 
+
+*Note: Deploy to Vercel to get your live URL*
+
+## 📱 Screenshots
+
+![Portfolio Preview](https://via.placeholder.com/800x400/1a1a1a/ffffff?text=Portfolio+Preview+-+Add+Your+Screenshot+Here)
+
+*Add your actual portfolio screenshots here after deployment*
 
 ## ✨ Features
 
@@ -62,8 +74,8 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/Portfolio-Website.git
-   cd Portfolio-Website
+   git clone https://github.com/Iamshuklau/Portfolio2.0.git
+   cd Portfolio2.0
    ```
 
 2. **Install dependencies**
@@ -118,7 +130,7 @@ npm run setup
 ## 📁 Project Structure
 
 ```
-portfolio-website/
+Portfolio2.0/
 ├── 📁 assets/
 │   ├── 📁 css/
 │   │   └── style.css           # Main stylesheet
@@ -194,9 +206,11 @@ The contact form requires a Resend API key to function properly:
 ## 🚢 Deployment
 
 ### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Add environment variables in Vercel dashboard
-3. Deploy automatically on every push
+1. Fork or clone this repository to your GitHub account
+2. Connect your GitHub repository to [Vercel](https://vercel.com)
+3. Add environment variables in Vercel dashboard:
+   - `RESEND_API_KEY=your_resend_api_key_here`
+4. Deploy automatically - your portfolio will be live instantly!
 
 ### Manual Deployment
 1. Build the project: `npm run build`
@@ -244,10 +258,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 **Utkarsh Shukla**
-- 🌐 Portfolio: [Live Demo](https://your-portfolio-url.vercel.app)
+- 🌐 Portfolio: [Live Demo](https://portfolio2-0-iamshuklau.vercel.app)
 - 📧 Email: iamshuklau@gmail.com
-- 💼 LinkedIn: [linkedin.com/in/utkarsh-shukla](https://linkedin.com/in/your-profile)
+- 💼 LinkedIn: [linkedin.com/in/utkarsh-shukla](https://linkedin.com/in/utkarsh-shukla-dev)
 - 🐱 GitHub: [@Iamshuklau](https://github.com/Iamshuklau)
+- 📂 Repository: [Portfolio2.0](https://github.com/Iamshuklau/Portfolio2.0)
 
 ---
 
