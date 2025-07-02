@@ -455,6 +455,11 @@ const typeWriter = (): void => {
 // Start the animation when page loads
 document.addEventListener('DOMContentLoaded', (): void => {
   setTimeout(typeWriter, 1000); // Start after 1 second
+  
+  // Initialize Vercel Analytics
+  if (typeof (window as any).va !== 'undefined') {
+    (window as any).va('page_view');
+  }
 });
 
 // Constellation Canvas Animation

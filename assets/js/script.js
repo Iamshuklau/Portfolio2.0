@@ -128,6 +128,11 @@ form.addEventListener("submit", async (e) => {
             showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
             form.reset();
             formBtn.setAttribute("disabled", "");
+            
+            // Track contact form submission
+            if (typeof window.va !== 'undefined') {
+                window.va('track', 'Contact Form Submitted');
+            }
         }
         else {
             throw new Error('Failed to send message');
@@ -235,13 +240,18 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
+    const pageName = this.innerHTML.toLowerCase();
     for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+      if (pageName === pages[i].dataset.page) {
         pages[i].classList.add("active");
         navigationLinks[i].classList.add("active");
         window.scrollTo(0, 0);
-            }
-            else {
+        
+        // Track page navigation
+        if (typeof window.va !== 'undefined') {
+          window.va('track', `Page View: ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}`);
+        }
+      } else {
         pages[i].classList.remove("active");
         navigationLinks[i].classList.remove("active");
       }
@@ -387,6 +397,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initConstellation();
     initScrollAnimations();
     initEnhancedInteractions();
+    
+    // Initialize Vercel Analytics
+    if (typeof window.va !== 'undefined') {
+        window.va('page_view');
+    }
 });
 // Constellation Canvas Animation - OPTIMIZED: Disable on mobile for better performance
 const initConstellation = () => {
