@@ -3,31 +3,19 @@
     "target": "ES2020",
     "module": "commonjs",
     "lib": ["ES2020", "DOM"],
-    "outDir": "./dist",
-    "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "removeComments": false,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "moduleResolution": "node"
   },
   "include": [
-    "src/**/*",
-    "api/**/*"
+    "server.ts",
+    "run-dev.ts",
+    "api/**/*.ts",
+    "assets/js/script.ts"
   ],
   "exclude": [
-    "node_modules",
-    "dist",
-    "assets/js/script.js"
+    "node_modules"
   ]
 } 
