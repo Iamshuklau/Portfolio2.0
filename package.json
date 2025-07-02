@@ -1,35 +1,12 @@
 {
-  "name": "portfolio-backend",
+  "name": "portfolio-static",
   "version": "1.0.0",
-  "description": "Backend API for portfolio contact form with Resend integration",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "start:ts": "ts-node server.ts",
-    "dev": "ts-node run-dev.ts",
-    "dev:js": "node run-dev.js",
-    "setup": "node setup.js",
-    "build": "tsc",
-    "build:frontend": "tsc assets/js/script.ts --outDir assets/js --target ES2020 --lib ES2020,DOM --skipLibCheck",
-    "watch": "tsc --watch"
-  },
+  "description": "Static portfolio with a JavaScript serverless contact form.",
+  "main": "index.html",
   "dependencies": {
-    "@vercel/analytics": "^1.5.0",
-    "@vercel/speed-insights": "^1.2.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "resend": "^2.1.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
-  },
-  "devDependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.10.5",
-    "concurrently": "^8.2.2"
+    "resend": "^2.1.0"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": "18.x"
   }
 }
