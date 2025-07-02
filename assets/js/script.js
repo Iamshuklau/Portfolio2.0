@@ -115,8 +115,8 @@ form.addEventListener("submit", async (e) => {
     const btnSpan = formBtn.querySelector('span');
     btnSpan.textContent = 'Sending...';
     try {
-        // Send email using your backend endpoint
-        const response = await fetch('http://localhost:3001/api/send-email', {
+            // Send email using your backend endpoint
+    const response = await fetch('/api/send-email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
