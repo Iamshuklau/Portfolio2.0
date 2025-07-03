@@ -1685,7 +1685,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .avatar-box { border-radius: 30px; }
 
-  .avatar-box img { width: 120px; }
+  .avatar-box img { width: 110px; }
 
   .info-content .name { margin-bottom: 15px; }
 
@@ -2184,7 +2184,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar-info { flex-direction: column; }
 
-  .avatar-box img { width: 150px; }
+  .avatar-box img { width: 140px; }
 
   .info-content .name {
     white-space: nowrap;
@@ -2462,7 +2462,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
   
   .constellation-bg::after {
-    background-size: 200px 120px;
+    background-size: 200px 100px;
+  }
+  
+  .constellation-bg {
+    display: none;
   }
 }
 
@@ -2592,7 +2596,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
   
   .constellation-bg::after {
-    background-size: 200px 120px;
+    background-size: 200px 100px;
   }
 }
 
