@@ -1383,6 +1383,7 @@ main {
   grid-template-columns: 1fr;
   gap: 30px;
   margin-bottom: 10px;
+  align-items: stretch; /* Ensure items stretch to fill the row height */
 }
 
 .project-item { display: none; }
@@ -1394,27 +1395,48 @@ main {
 
 /* ENHANCED PROJECT ITEM ANIMATIONS */
 .project-item {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  background: var(--border-gradient-onyx);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+}
+
+.project-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
 }
 
 .project-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-4);
 }
 
 @keyframes scaleUp {
-  0% { transform: scale(0.5); }
-  100% { transform: scale(1); }
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
-.project-item > a { width: 100%; }
+.project-item > a { 
+  width: 100%; 
+  display: flex; /* Changed to flex */
+  flex-direction: column; /* Align items vertically */
+  height: 100%; /* Ensure the link takes full height of the item */
+  text-decoration: none;
+  color: inherit;
+}
 
 .project-img {
   position: relative;
   width: 100%;
-  height: 200px;
-  border-radius: 16px;
+  height: 240px; /* Fixed height for uniformity */
+  border-radius: 0; /* Remove border radius from img container */
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 0;
 }
 
 .project-img::before {
@@ -1429,13 +1451,15 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
+.project-item > a:hover .project-img::before { 
+  background: hsla(0, 0%, 0%, 0.5); 
+}
 
 .project-item-icon-box {
   --scale: 0.8;
 
-  background: var(--jet);
-  color: var(--orange-yellow-crayola);
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1444,8 +1468,9 @@ main {
   padding: 18px;
   border-radius: 12px;
   opacity: 0;
-  z-index: 1;
+  z-index: 2;
   transition: var(--transition-1);
+  box-shadow: var(--shadow-2);
 }
 
 .project-item > a:hover .project-item-icon-box {
@@ -1459,35 +1484,62 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: var(--transition-1);
 }
 
-.project-item > a:hover img { transform: scale(1.1); }
+.project-item > a:hover img { transform: scale(1.05); }
+
+/* Project content area with consistent spacing */
+.project-content {
+  padding: 20px;
+  display: flex; /* Add flex properties */
+  flex-direction: column;
+  flex-grow: 1; /* Allow content to grow and fill space */
+}
 
 .project-title,
-.project-category { margin-left: 10px; }
+.project-category { 
+  margin-left: 0;
+  margin-bottom: 8px;
+}
 
 .project-title {
   color: var(--white-2);
-  font-size: var(--fs-5);
-  font-weight: var(--fw-400);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-500);
   text-transform: capitalize;
   line-height: 1.3;
+  margin-bottom: 12px;
+  /* Limit title to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.6em; /* Reserve space for 2 lines */
 }
 
 .project-category {
   color: var(--theme-text-secondary);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
+  line-height: 1.6;
+  margin-bottom: 0;
+  /* Limit description to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 4.8em; /* Reserve space for 3 lines */
   transition: color var(--transition-1);
 }
 
 
-
-
-
 /*-----------------------------------*\
   #BLOG
+\*-----------------------------------*/
 \*-----------------------------------*/
 
 .blog-posts { margin-bottom: 10px; }
