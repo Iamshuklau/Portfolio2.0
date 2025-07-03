@@ -1558,6 +1558,24 @@ textarea.form-input::-webkit-resizer { display: none; }
 \*-----------------------------------*/
 
 /**
+ * responsive for very small screens
+ */
+
+@media (max-width: 449px) {
+  .timeline-list {
+    margin-left: 25px;
+  }
+
+  .timeline-item:not(:last-child)::before {
+    left: -20px;
+  }
+
+  .timeline-item::after {
+    left: -23px;
+  }
+}
+
+/**
  * responsive larger than 450px screen
  */
 
