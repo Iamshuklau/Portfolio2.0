@@ -276,6 +276,12 @@ body {
   animation: shimmer 1.5s infinite;
 }
 
+/* Hidden modal content */
+.service-modal-content,
+.blog-modal-content {
+  display: none;
+}
+
 /* ENHANCED ICON ANIMATIONS */
 .icon-box {
   position: relative !important;
@@ -698,6 +704,7 @@ main {
   left: 0;
   width: 100%;
   background: var(--theme-bg-secondary);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid var(--theme-border);
   border-radius: 12px 12px 0 0;
@@ -712,6 +719,78 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0 10px;
+  position: relative;
+}
+
+/* LIQUID GLASS BACKGROUND - Mobile Only */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    background: rgba(20, 20, 20, 0.85);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    padding: 6px;
+  }
+
+  .navbar-list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    position: relative;
+    height: 48px;
+  }
+
+  .navbar-link {
+    flex: 1;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Fixed glass box - exact dimensions and centered positioning */
+  .navbar-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--liquid-glass-left, 0);
+    width: var(--liquid-glass-width, 0);
+    height: 48px;
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.04) 25%,
+      rgba(255, 255, 255, 0.02) 50%,
+      rgba(255, 255, 255, 0.04) 75%,
+      rgba(255, 255, 255, 0.08) 100%
+    );
+    border-radius: 14px;
+    -webkit-backdrop-filter: blur(25px) saturate(1.5);
+    backdrop-filter: blur(25px) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: var(--liquid-glass-opacity, 0);
+    z-index: 1;
+  }
+
+  /* Fixed positions for each button - perfectly centered */
+  /* These are no longer needed with the dynamic JS approach */
 }
 
 .navbar-link {
@@ -721,21 +800,107 @@ main {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   border-radius: 12px;
+  z-index: 1;
 }
 
-/* ENHANCED NAVBAR HOVER ANIMATION */
-.navbar-link:hover,
-.navbar-link:focus { 
-  color: var(--theme-text-primary);
-  transform: translateY(-1px);
-  background: var(--theme-bg-tertiary);
+/* MOBILE LIQUID GLASS EFFECTS */
+@media (max-width: 768px) {
+  .navbar-link {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: 0;
+    padding: 16px 4px;
+    border-radius: 18px;
+    z-index: 2;
+    min-width: 0; /* Allows flex items to shrink */
+  }
+
+  .navbar-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.03) 50%,
+      rgba(255, 255, 255, 0.08) 100%
+    );
+    border-radius: 18px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: -1;
+  }
+
+  .navbar-link:hover::before,
+  .navbar-link:focus::before {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  .navbar-link.active {
+    color: var(--theme-text-primary);
+    font-weight: var(--fw-500);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+  }
+
+  .navbar-link.active::before {
+    opacity: 0;
+  }
+
+  /* Smoother ripple effect */
+  .navbar-link::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .navbar-link:active::after {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Smooth text transitions */
+  .navbar-link {
+    font-size: var(--fs-8);
+    letter-spacing: 0.01em;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .navbar-link:hover {
+    color: var(--theme-text-primary);
+  }
 }
 
-/* SUBTLE ACTIVE STATE */
-.navbar-link.active {
-  color: var(--theme-text-primary);
-  background: var(--theme-bg-tertiary);
-  font-weight: var(--fw-500);
+/* ENHANCED NAVBAR HOVER ANIMATION - Desktop */
+@media (min-width: 769px) {
+  .navbar-link:hover,
+  .navbar-link:focus { 
+    color: var(--theme-text-primary);
+    transform: translateY(-1px);
+    background: var(--theme-bg-tertiary);
+  }
+
+  .navbar-link.active {
+    color: var(--theme-text-primary);
+    background: var(--theme-bg-tertiary);
+    font-weight: var(--fw-500);
+  }
 }
 
 /* REMOVED - Now handled by enhanced animations above */
@@ -875,8 +1040,8 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.6;
   display: -webkit-box;
-  line-clamp: 4;
   -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   transition: color var(--transition-1);
@@ -1410,6 +1575,7 @@ main {
   line-height: 1.2;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1424,6 +1590,7 @@ main {
   margin-bottom: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1781,8 +1948,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .testimonials-text {
-    line-clamp: 2;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 
   /* testimonials modal */

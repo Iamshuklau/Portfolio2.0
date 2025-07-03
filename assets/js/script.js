@@ -256,8 +256,93 @@ for (let i = 0; i < navigationLinks.length; i++) {
         navigationLinks[i].classList.remove("active");
       }
     }
+    
+    // Update liquid glass animation for mobile
+    updateLiquidGlassAnimation();
   });
 }
+
+// Simple Fixed Glass Animation for Mobile Navigation
+function updateLiquidGlassAnimation() {
+  // Only run on mobile devices
+  if (window.innerWidth > 768) {
+    return;
+  }
+  
+  const navbarList = document.querySelector('.navbar-list');
+  const activeNavLink = document.querySelector('.navbar-link.active');
+  
+  if (!navbarList || !activeNavLink) return;
+  
+  const left = activeNavLink.offsetLeft;
+  const width = activeNavLink.offsetWidth;
+
+  navbarList.style.setProperty('--liquid-glass-left', `${left}px`);
+  navbarList.style.setProperty('--liquid-glass-width', `${width}px`);
+  navbarList.style.setProperty('--liquid-glass-opacity', '1');
+}
+
+// Enhanced initialization with better timing
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait for layout to be ready
+  setTimeout(() => {
+    updateLiquidGlassAnimation();
+    
+    // Pre-warm the animation
+    const navbarList = document.querySelector('.navbar-list');
+    if (navbarList && window.innerWidth <= 768) {
+      navbarList.style.willChange = 'transform';
+      
+      // Clean up will-change after animations
+      setTimeout(() => {
+        navbarList.style.willChange = 'auto';
+      }, 1000);
+    }
+  }, 200);
+  
+  // Debounced resize handler with improved performance
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      updateLiquidGlassAnimation();
+    }, 100);
+  });
+});
+
+// Enhanced mobile touch interactions with better timing
+if ('ontouchstart' in window) {
+  navigationLinks.forEach((link, index) => {
+    let touchStartTime;
+    
+    link.addEventListener('touchstart', function(e) {
+      touchStartTime = Date.now();
+      // Smoother touch feedback
+      this.style.transform = 'scale(0.98)';
+      this.style.transition = 'transform 0.1s ease-out';
+    }, { passive: true });
+    
+    link.addEventListener('touchend', function(e) {
+      const touchDuration = Date.now() - touchStartTime;
+      
+      // Restore transform with appropriate timing
+      this.style.transition = `transform ${touchDuration < 150 ? '0.2s' : '0.3s'} cubic-bezier(0.175, 0.885, 0.32, 1.275)`;
+      this.style.transform = '';
+      
+      // Clean up transition after animation
+      setTimeout(() => {
+        this.style.transition = '';
+      }, 300);
+    }, { passive: true });
+    
+    // Prevent unwanted hover states on touch devices
+    link.addEventListener('touchcancel', function(e) {
+      this.style.transform = '';
+      this.style.transition = '';
+    }, { passive: true });
+  });
+}
+
 // Service modal functionality
 const serviceItems = document.querySelectorAll("[data-service-item]");
 const serviceModalContainer = document.querySelector("[data-service-modal-container]");
@@ -512,7 +597,7 @@ const initConstellation = () => {
       ctx.beginPath();
       ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
       ctx.fill();
-      
+            
             // Draw bright core
             ctx.globalAlpha = 1; // Maximum brightness for core
             const coreColor = star.color === '#ffffff' ? '#ffffff' : 'rgba(255, 255, 255, 0.9)';
